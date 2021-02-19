@@ -9,8 +9,11 @@ jobs:
   print_world:
     docker:
       - image: circleci/node:13.8.0
+    environment:
+      CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
     steps:
       - run: echo world
+      - run: echo $CIRCLE_COMPARE_URL
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
