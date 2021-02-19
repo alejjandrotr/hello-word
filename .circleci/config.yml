@@ -13,7 +13,7 @@ jobs:
       CIRCLE_COMPARE_URL: << pipeline.project.git_url >>/compare/<< pipeline.git.base_revision >>..<<pipeline.git.revision>>
     steps:
       - run: echo world
-      - run: echo $CIRCLE_COMPARE_URL
+      - run: echo $MY_NAMe
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
